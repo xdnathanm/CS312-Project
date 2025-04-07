@@ -68,8 +68,8 @@
         ];
         foreach ($team as $member) {
             echo "<div class='team-member'>";
-            echo "<h2>" . htmlspecialchars($member['name']) . "</h2>";
-            echo "<p>" . htmlspecialchars($member['bio']) . "</p>";
+            echo "<h2>" . htmlspecialchars($member['name'], ENT_QUOTES, 'UTF-8') . "</h2>";
+            echo "<p>" . htmlspecialchars($member['bio'], ENT_QUOTES, 'UTF-8') . "</p>";
             echo "</div>";
         }
         ?>
