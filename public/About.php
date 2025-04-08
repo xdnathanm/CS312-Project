@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport">
     <title>About Us</title>
     <style>
         body {
@@ -17,6 +17,25 @@
             color: #fff;
             padding: 1rem 0;
             text-align: center;
+        }
+        nav {
+            background: #444;
+            padding: 1rem 0;
+            text-align: left;
+        }
+        nav a {
+            display: inline-block;
+            background: #555;
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        nav a:hover {
+            background: #666;
         }
         .container {
             max-width: 800px;
@@ -46,6 +65,10 @@
     <header>
         <h1>About Us</h1>
     </header>
+    <nav>
+        <a href="/index.html">Home</a>
+        <a href="/public/Graphing.php">Graphing Page</a>
+    </nav>
     <div class="container">
         <h1>Meet Our Team</h1>
         <div class="team-member">
@@ -54,7 +77,6 @@
         </div>
         <div class="team-member">
             <h2>Jeffrey Markham</h2>
-            <p></p>
             <p>
                 Bio: Senior in computer science at CSU, with a concentration of networking and security. Was in the U.S. Army from 2015 to 2019, then joined 
                 the Colorado Air National Guard as a Client Systems Technician where I help conduct cybersecurity operations. I have a passion for technology 
@@ -63,7 +85,6 @@
         </div>
         <div class="team-member">
             <h2>Quinten Roberts</h2>
-            <p></p>
             <p>Bio: </p>
         </div>
     </div>
