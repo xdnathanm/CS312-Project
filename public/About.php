@@ -85,16 +85,12 @@
         </div>
         <div class="team-member">
             <h2>Quinten Roberts</h2>
-<<<<<<< HEAD
             <img src="Quinnface.jpeg" alt="Face" width="200" height="300">
-            <p>Bio: Junior in Computer Science @ CSU, concentration of AI and Machine Learning. Born in Colorado and grew up with a love of computers. I
-               like to make video games, play basketball, and watch movies. I've been continuing to enjoy learning about html, css, php, and all the 
-               various frameworks/addons involved with web development.
-               
+            <p>
+                Bio: Junior in Computer Science @ CSU, concentration of AI and Machine Learning. Born in Colorado and grew up with a love of computers. I
+                like to make video games, play basketball, and watch movies. I've been continuing to enjoy learning about html, css, php, and all the 
+                various frameworks/addons involved with web development.
             </p>
-=======
-            <p>Bio: </p>
->>>>>>> 09b44a56d2681fd1f9a41cd369a0e0d9cea27c2b
         </div>
     </div>
 </body>
