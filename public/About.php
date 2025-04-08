@@ -47,32 +47,25 @@
         <h1>About Us</h1>
     </header>
     <div class="container">
-        <?php
-        $team = [
-            [
-                "name" => "Your Name",
-                "bio" => "Write a short bio about yourself here. Include your role and interests."
-            ],
-            [
-                "name" => "Teammate 1",
-                "bio" => "Write a short bio about Teammate 1 here. Include their role and interests."
-            ],
-            [
-                "name" => "Teammate 2",
-                "bio" => "Write a short bio about Teammate 2 here. Include their role and interests."
-            ],
-            [
-                "name" => "Teammate 3",
-                "bio" => "Write a short bio about Teammate 3 here. Include their role and interests."
-            ]
-        ];
-        foreach ($team as $member) {
-            echo "<div class='team-member'>";
-            echo "<h2>" . htmlspecialchars($member['name'], ENT_QUOTES, 'UTF-8') . "</h2>";
-            echo "<p>" . htmlspecialchars($member['bio'], ENT_QUOTES, 'UTF-8') . "</p>";
-            echo "</div>";
-        }
-        ?>
+        <h1>Meet Our Team</h1>
+        <div class="team-member">
+            <h2>Nathan McIntyre</h2>
+            <p>Bio: </p>
+        </div>
+        <div class="team-member">
+            <h2>Jeffrey Markham</h2>
+            <p></p>
+            <p>
+                Bio: Senior in computer science at CSU, with a concentration of networking and security. Was in the U.S. Army from 2015 to 2019, then joined 
+                the Colorado Air National Guard as a Client Systems Technician where I help conduct cybersecurity operations. I have a passion for technology 
+                and enjoy learning about new advancements in the field.
+            </p>
+        </div>
+        <div class="team-member">
+            <h2>Quinten Roberts</h2>
+            <p></p>
+            <p>Bio: </p>
+        </div>
     </div>
 </body>
 </html>
