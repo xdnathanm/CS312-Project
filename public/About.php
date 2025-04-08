@@ -54,7 +54,6 @@
         </div>
         <div class="team-member">
             <h2>Jeffrey Markham</h2>
-            <p></p>
             <p>
                 Bio: Senior in computer science at CSU, with a concentration of networking and security. Was in the U.S. Army from 2015 to 2019, then joined 
                 the Colorado Air National Guard as a Client Systems Technician where I help conduct cybersecurity operations. I have a passion for technology 
