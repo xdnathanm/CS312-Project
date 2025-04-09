@@ -76,7 +76,7 @@
     </header>
     <nav>
         <a href="/index.html">Home</a>
-        <a href="/public/Graphing.php">Graphing Page</a>
+        <a href="/public/Graphing.php">Graphing</a>
     </nav>
     <div class="container">
         <h1>Meet Our Team</h1>
