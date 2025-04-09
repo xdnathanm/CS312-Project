@@ -83,14 +83,16 @@
         <div class="team-member">
             <h2>Nathan McIntyre</h2>
             <img src="nathan.jpeg" alt="nathan" width ="200" height="200">
-            <p>Bio: I am a senior in Computer Science at CSU, pursuing a concentration in networking and system security. I currently work 
+            <p>
+                Bio: I am a senior in Computer Science at CSU, pursuing a concentration in networking and system security. I currently work 
                 for CSU Housing and Dining as a networking intern. I am always eager to learn in an ever-changing environment to overcome the new
                 obstacles that we face. In my free to relax with my Fiancé and our  black lab, Bella, 
                 watching tv and playing video games.
-  </p>
+            </p>
         </div>
         <div class="team-member">
             <h2>Jeffrey Markham</h2>
+            <img src="JeffPhoto.jpg" alt="Jeff" width="200" height="200">
             <p>
                 Bio: Senior in computer science at CSU, with a concentration of networking and security. Was in the U.S. Army from 2015 to 2019, then joined 
                 the Colorado Air National Guard as a Client Systems Technician where I help conduct cybersecurity operations. I have a passion for technology 
