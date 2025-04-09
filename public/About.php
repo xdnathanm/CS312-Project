@@ -10,32 +10,35 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            background-color: #f4f4f4;
+            background-color: #F5F5F5;
+            color: #00538F;
         }
         header {
-            background: #333;
-            color: #fff;
-            padding: 1rem 0;
+            background: #00538F;
+            color: #F5F5F5;
+            padding: 0.5rem 0;
             text-align: center;
+            font-size: large;
         }
         nav {
-            background: #444;
-            padding: 1rem 0;
-            text-align: left;
+            background: #00538F;
+            padding: 0.5rem;
+            text-align: center;
         }
         nav a {
             display: inline-block;
-            background: #555;
-            color: #fff;
+            background: #F5F5F5;
+            color: #00538F;
             text-decoration: none;
             padding: 0.5rem 1rem;
             margin: 0 0.5rem;
             border-radius: 25px;
             font-weight: bold;
-            transition: background 0.3s ease;
+            transition: background 0.3s ease, color 0.3s ease;
         }
         nav a:hover {
-            background: #666;
+            background: #00538F;
+            color: #F5F5F5;
         }
         .container {
             max-width: 800px;
@@ -55,9 +58,15 @@
         }
         .team-member h2 {
             margin: 0 0 0.5rem;
+            color: #00538F;
         }
         .team-member p {
             margin: 0;
+            color: #00538F;
+        }
+        .team-member img {
+            border: 2px solid #00538F;
+            border-radius: 8px;
         }
     </style>
 </head>
@@ -67,7 +76,7 @@
     </header>
     <nav>
         <a href="/index.html">Home</a>
-        <a href="/public/Graphing.php">Graphing Page</a>
+        <a href="/public/Graphing.php">Graphing</a>
     </nav>
     <div class="container">
         <h1>Meet Our Team</h1>
