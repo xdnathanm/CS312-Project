@@ -49,6 +49,11 @@
                 border-radius: 8px;
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             }
+            .input{
+                text-align: center;
+                padding-top: 50px;
+                color: #053305
+            }
         </style> 
     </head>
     <body>
@@ -60,4 +65,14 @@
         <a href="About.php">About Us</a>
         
     </nav>
+
+    <div class = "input">
+        <p>Enter the number of rows (between 1 and 1000) and columns (between 1 and 702) you would like in your table. </p>
+        <form method="GET" >
+          Rows:     <input type="text" name="rows" placeholder="1-1000" min="1" max ="1000">
+          Columns:  <input type="text" name="columns" placeholder="1-702" min="1" max ="702">
+          <input type ="submit">
+        </form>
+
+    </div>
     </body>
