@@ -68,9 +68,10 @@
 
     <div class = "input">
         <p>Enter the number of rows (between 1 and 1000) and columns (between 1 and 702) you would like in your table. </p>
-        <form method="GET" >
-          Rows:     <input type="text" name="rows" placeholder="1-1000" min="1" max ="1000">
-          Columns:  <input type="text" name="columns" placeholder="1-702" min="1" max ="702">
+        <form method="GET" action="Graph.php">
+          Rows:     <input type="number" id="rows" name="rows" placeholder="1-1000" min="1" max ="1000">
+          Columns:  <input type="number" id="columns" name="columns" placeholder="1-702" min="1" max ="702">
+          Colors:   <input type="number" id="colors" name="colors" placeholder="1-10" min="1" max="10">
           <input type ="submit">
         </form>
 
