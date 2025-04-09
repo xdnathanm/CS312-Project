@@ -73,7 +73,12 @@
         <h1>Meet Our Team</h1>
         <div class="team-member">
             <h2>Nathan McIntyre</h2>
-            <p>Bio: </p>
+            <img src="nathan.jpeg" alt="nathan" width ="200" height="200">
+            <p>Bio: I am a senior in Computer Science at CSU, pursuing a concentration in networking and system security. I currently work 
+                for CSU Housing and Dining as a networking intern. I am always eager to learn in an ever-changing environment to overcome the new
+                obstacles that we face. In my free to relax with my Fiancé and our  black lab, Bella, 
+                watching tv and playing video games.
+  </p>
         </div>
         <div class="team-member">
             <h2>Jeffrey Markham</h2>
