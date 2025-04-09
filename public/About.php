@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport">
+    <link rel="icon" type="image/x-icon" href="PixelForge.jpeg">
     <title>About Us</title>
     <style>
         body {
