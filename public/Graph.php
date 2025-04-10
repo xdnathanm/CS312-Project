@@ -118,12 +118,12 @@
             {
                 const column = document.createElement("td");
 
-                row.appendChild(column);
+                row.append(column);
             }
-            table.appendChild(row);
+            table.append(row);
         }
 
-        tableDiv.appendChild(table);
+        tableDiv.append(table);
     }
 </script>
 
