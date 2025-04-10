@@ -97,6 +97,7 @@
 <header>
     <h1>Graphing</h1>
 </header>
+
 <nav>
     <a href="/index.html">Home</a>
     <a href="About.php">About Us</a>
@@ -113,13 +114,15 @@
         </form>
     </div>
 
-    <div id="tableDiv"></div>
+    <div 
+        id="tableDiv">
+    </div>
 </div>
 
 <script>
     document.getElementById("tableForm").addEventListener("submit", table);
-
     const colorChoices = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Grey", "Brown", "Black", "Teal"];
+    let selectedColor = null; // default color that will not contain value until user selects a color
 
     function table(event)
     {
@@ -129,27 +132,23 @@
         const rows = parseInt(document.getElementById("rows").value);
         const columns = parseInt(document.getElementById("columns").value);
         const colors = parseInt(document.getElementById("colors").value);
-
         const tableDiv = document.getElementById("tableDiv");
+        const table1 = document.createElement("table");
 
         //removes old table
         tableDiv.innerHTML = ""; 
-
         //table1 style
-        const table1 = document.createElement("table");
         table1.className = "table1";
 
         for(let i = 0; i < colors; i++) 
         {
             const row = document.createElement("tr");
-
             const left = document.createElement("td");
-
             const radio = document.createElement("input");
+            const select = document.createElement("select");
+
             radio.type = "radio";
             radio.name = "selected";
-
-            const select = document.createElement("select");
 
             //sector options
             for(let j = 0; j < colorChoices.length; j++) 
@@ -159,19 +158,27 @@
                 select.append(option);
             }
 
+            // Updates the color when you click the radio button
+            radio.addEventListener("change", () => {
+                selectedColor = select.value;
+            });
+
+            // Updates the color when you select a different option
+            select.addEventListener("change", () => {
+                if (radio.checked) {
+                    selectedColor = select.value;
+                }
+            });
+
             left.append(radio);
             left.append(select);
             row.append(left);
 
             const right = document.createElement("td");
             row.append(right);
-
             table1.append(row);
         }
-
         tableDiv.append(table1);
-
-
 
         const table2 = document.createElement("table");
         al = 65; // aschii alphabet character start number(IE A)
@@ -223,16 +230,21 @@
                     }
                 }
 
+                // Adds clicking functionality, ensures that the user needs to select a
+                // color before clicking on the table
+                column.addEventListener("click", () => {
+                    if (selectedColor) {
+                        column.style.backgroundColor = selectedColor.toLowerCase(); // Apply the selected color
+                    } else {
+                        alert("Please select a color from Table 1.");
+                    }
+                });
                 row.append(column);
             }
-
             table2.append(row);
         }
-
         tableDiv.append(table2);
     }
 </script>
-
-
 </body>
 </html>
