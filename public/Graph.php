@@ -65,6 +65,7 @@
             height: 30px;
             border: 1px solid #065508;
         }
+        
     </style>
 </head>
 <body>
@@ -109,15 +110,53 @@
         tableDiv.innerHTML = ""; 
 
         const table = document.createElement("table");
-
-        for(let i = 0; i < rows; i++) 
+        al = 65; // aschii alphabet character start number(IE A)
+        al2= 65; // for the second alphabet charachter
+        eal = 0;   // end of alphabet for the first A
+        eal2 = 0; // end of alphabet for the second leter
+        for(let i = 0; i <= rows; i++) 
         {
             const row = document.createElement("tr");
 
-            for(let j = 0; j < columns; j++) 
+            for(let j = 0; j <= columns; j++) 
             {
                 const column = document.createElement("td");
-
+                // this addes the numbers in the rows
+                if( j == 0 && i != 0){
+                    const cell_text = document.createTextNode(`${i}`);
+                    column.appendChild(cell_text);
+                }
+                // this adds the letters in the columns
+                if(i==0 && j !=0 ){
+                    if(eal == 0 ){
+                        const cell_text = document.createTextNode(`${String.fromCharCode(al)}`);
+                        column.appendChild(cell_text);
+                        al++;
+                    }
+                    else if(eal == 1 ){
+                        
+                        
+                        if(eal2 == 1){
+                            al++;
+                            eal2 = 0;
+                        }
+                        const cell_text = document.createTextNode(`${String.fromCharCode(al)} ${String.fromCharCode(al2)} `);
+                        column.appendChild(cell_text);
+                        al2++;
+                    }
+                    // sets the first alphbet aschii num back to 56 and sets the flag that for end of alph to be true.
+                    if(al > 90){
+                        eal = 1;
+                        al = 65;
+                    }
+                    // sets the second alphbet aschii num back to 65
+                    if (al2 > 90){
+                        al2 = 65;
+                        eal2= 1;
+                    }
+                    
+                    
+                }
                 row.append(column);
             }
             table.append(row);
