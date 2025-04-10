@@ -103,7 +103,7 @@
         </div>
         <div class="team-member">
             <h2>Quinten Roberts</h2>
-            <img src="Quinnface.jpeg" alt="Face" width="200" height="300">
+            <img src="Quinnface.jpeg" alt="Face" width="200" height="200">
             <p>
                 Bio: Junior in Computer Science @ CSU, concentration of AI and Machine Learning. Born in Colorado and grew up with a love of computers. I
                 like to make video games, play basketball, and watch movies. I've been continuing to enjoy learning about html, css, php, and all the 
