@@ -105,7 +105,8 @@
 
 <div class="container">
     <div class="input">
-        <p>Enter the number of rows (between 1 and 1000) and columns (between 1 and 702) you would like in your table.</p>
+        <p>Enter the number of rows (between 1 and 1000), columns (between 1 and 702) you would like in your table,
+             and the number of colors you would like to use(1-10)</p>
         <form id="tableForm">
             Rows: <input type="number" id="rows" name="rows" placeholder="1-1000" min="1" max="1000" required>
             Columns: <input type="number" id="columns" name="columns" placeholder="1-702" min="1" max="702" required>
@@ -172,10 +173,11 @@
             });
 
             left.append(radio);
-            left.append(select);
+            
             row.append(left);
 
             const right = document.createElement("td");
+            right.append(select);
             row.append(right);
             table1.append(row);
         }
@@ -235,6 +237,7 @@
 
 
         const table2 = document.createElement("table");
+        table2.style.width ="100%";
         al = 65; // aschii alphabet character start number(IE A)
         al2= 65; // for the second alphabet charachter
         eal = 0;   // end of alphabet for the first A
@@ -243,11 +246,11 @@
         for(let i = 0; i <= rows; i++) 
         {
             const row = document.createElement("tr");
-
+            
             for(let j = 0; j <= columns; j++) 
             {
                 const column = document.createElement("td");
-
+                
                 // this addes the numbers in the rows
                 if( j == 0 && i != 0){
                     const cell_text = document.createTextNode(`${i}`);
@@ -271,13 +274,13 @@
                         al2++;
                     }
 
-                    // sets the first alphbet aschii num back to 56 and sets the flag that for end of alph to be true.
+                    // sets the first alphabet aschii num back to 56 and sets the flag that for end of alph to be true.
                     if(al > 90){
                         eal = 1;
                         al = 65;
                     }
 
-                    // sets the second alphbet aschii num back to 65
+                    // sets the second alphabet aschii num back to 65
                     if (al2 > 90){
                         al2 = 65;
                         eal2= 1;
