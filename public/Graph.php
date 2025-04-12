@@ -12,7 +12,7 @@
         padding: 0;
         line-height: 1.6;
         background-color: #F5F5F5;
-        color: #065508;
+        color: #000000;
         }
         header {
             background: #065508;
@@ -131,7 +131,7 @@
 
         const rows = parseInt(document.getElementById("rows").value);
         const columns = parseInt(document.getElementById("columns").value);
-        const colors = parseInt(document.getElementById("colors").value);
+        const colorNum = parseInt(document.getElementById("colors").value);
         const tableDiv = document.getElementById("tableDiv");
         const table1 = document.createElement("table");
 
@@ -140,7 +140,7 @@
         //table1 style
         table1.className = "table1";
 
-        for(let i = 0; i < colors; i++) 
+        for(let i = 0; i < colorNum; i++) 
         {
             const row = document.createElement("tr");
             const left = document.createElement("td");
@@ -149,6 +149,7 @@
 
             radio.type = "radio";
             radio.name = "selected";
+            select.name = "colorSelect";
 
             //sector options
             for(let j = 0; j < colorChoices.length; j++) 
@@ -179,6 +180,59 @@
             table1.append(row);
         }
         tableDiv.append(table1);
+
+        const colors = document.querySelectorAll('select[name="colorSelect"]');
+
+        //color sector duplicate prevention
+        function noDuplicates()
+        {
+            const currentColors = [];
+
+            //gets colors currently selected
+            for(let i = 0; i < colors.length; i++) 
+            {
+                currentColors.push(colors[i].value);
+            }
+
+            for(let i = 0; i < colors.length; i++) 
+            {
+                const select = colors[i];
+                const selectedColor = currentColors[i];
+
+                //makes sure options are clear before creating new one
+                while(select.firstChild) 
+                {
+                    select.remove(select.firstChild);
+                }
+
+                //creates new selector without selected colors
+                for(let j = 0; j < colorChoices.length; j++) 
+                {
+                    const color = colorChoices[j];
+                    const colorLower = color.toLowerCase();
+
+                    if(!currentColors.includes(colorLower) || colorLower === selectedColor) 
+                    {
+                        const option = document.createElement("option");
+                        option.value = colorLower;
+                        option.textContent = color;
+                        if(colorLower === selectedColor) 
+                        {
+                            option.selected = true;
+                        }
+                        select.appendChild(option);
+                    }
+                }
+            }
+        }
+
+        for(let i = 0; i < colors.length; i++) 
+        {
+            colors[i].addEventListener("change", noDuplicates);
+        }
+
+        noDuplicates();
+
 
         const table2 = document.createElement("table");
         al = 65; // aschii alphabet character start number(IE A)
