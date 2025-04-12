@@ -90,6 +90,9 @@
             width: 100px;
             margin-left: 10px;
         }
+        .printpage{
+            text-align:center;
+        }
     </style>
 </head>
 <body>
@@ -299,6 +302,11 @@
         }
         tableDiv.append(table2);
     }
+
 </script>
+<div class="printpage"> 
+    <button type="button" onclick="location.href='printPage.php'"> Print Page</button>
+
+</div>
 </body>
 </html>
