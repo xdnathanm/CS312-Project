@@ -13,6 +13,7 @@
         line-height: 1.6;
         background-color: #F5F5F5;
         color: #000000;
+  
         }
         header {
             background: #065508;
@@ -43,43 +44,62 @@
         }
         .container {
             max-width: 800px;
+            
             margin: 2rem auto;
             background: #fff;
             padding: 1.5rem;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+           
         }
         .input{
             text-align: center;
             padding-top: 50px;
+            
             color: #000000
+    
         }
+
         table 
         {
             border-collapse: collapse;
-            margin: 20px auto;
+            margin: 24px auto;
+            
+            
         }
         td 
         {
-            width: 30px;
+            width: 300px;
             height: 30px;
             border: 1px solid #000000;
+
         }
+        #tableDiv{
+            width:800px;
+            
+        } 
         .table1 
         {
-            width: 100%;
+            width:200px;
+            
             border-collapse: collapse;
             margin: 20px auto;
+            overflow-y: scroll;
+            overflow-x: scroll;
+            
         }
         .table1 td 
         {
             border: 1px solid #000000;
             padding: 0.75rem;
+            width:100%;
             vertical-align: middle;
+            
         }
         .table1 td:first-child 
         {
-            width: 20%;
+        width: 50%;
+            
         }
         .table1 td:last-child 
         {
@@ -90,6 +110,25 @@
             width: 100px;
             margin-left: 10px;
         }
+        
+        #tableDiv2{
+            max-width: 800px;
+            min-width: 800px;
+            min-height:500px;
+            max-height:500px;
+            overflow-y: scroll;
+            overflow-x: scroll;
+        }
+        .table2{
+            max-width:800px;
+            min-width:800px;
+        }
+        .table2 td{
+            max-width:23px;
+            min-width:23px;
+        }
+        
+     
     </style>
 </head>
 <body>
@@ -117,10 +156,16 @@
 
     <div 
         id="tableDiv">
+        
     </div>
+    <div 
+        id="tableDiv2">
+
+    </div>
+  
 </div>
 
-<script>
+<script >
     document.getElementById("tableForm").addEventListener("submit", table);
     const colorChoices = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Grey", "Brown", "Black", "Teal"];
     let selectedColor = null; // default color that will not contain value until user selects a color
@@ -134,13 +179,17 @@
         const columns = parseInt(document.getElementById("columns").value);
         const colorNum = parseInt(document.getElementById("colors").value);
         const tableDiv = document.getElementById("tableDiv");
+        
         const table1 = document.createElement("table");
-
+        
+        
         //removes old table
         tableDiv.innerHTML = ""; 
+       
         //table1 style
         table1.className = "table1";
-
+        
+        
         for(let i = 0; i < colorNum; i++) 
         {
             const row = document.createElement("tr");
@@ -182,6 +231,7 @@
             table1.append(row);
         }
         tableDiv.append(table1);
+        // need to find away to make a new tablediv for the second graphs so that it can individually be modified
 
         const colors = document.querySelectorAll('select[name="colorSelect"]');
 
@@ -235,9 +285,11 @@
 
         noDuplicates();
 
-
+        //const tableDiv2 = document.getElementByID("tableDiv2");
         const table2 = document.createElement("table");
-        table2.style.width ="100%";
+        table2.className = "table2";
+        //tableDiv2.innerHTML = "";
+        // table2.style.overflow-y = "auto";
         al = 65; // aschii alphabet character start number(IE A)
         al2= 65; // for the second alphabet charachter
         eal = 0;   // end of alphabet for the first A
@@ -300,7 +352,7 @@
             }
             table2.append(row);
         }
-        tableDiv.append(table2);
+        tableDiv2.append(table2);
     }
 </script>
 </body>
