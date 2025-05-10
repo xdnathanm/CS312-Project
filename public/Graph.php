@@ -168,6 +168,7 @@
 <nav>
     <a href="/index.html">Home</a>
     <a href="About.php">About Us</a>
+    <a href="Database.php">Color Selection</a>
 </nav>
 
 <div class="container">
@@ -320,7 +321,7 @@
                 }
 
                 // this adds the letters in the columns
-                if (i == 0 && j != 0){
+                if(i == 0 && j != 0){
                     if(eal == 0){
                         const cell_text = document.createTextNode(`${String.fromCharCode(al)}`);
                         column.appendChild(cell_text);
