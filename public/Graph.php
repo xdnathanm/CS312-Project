@@ -128,6 +128,52 @@
             min-width:23px;
         }
         
+        #printLogo {
+            display: none;
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        footer 
+        {
+            text-align: center;
+            margin-top: 2rem;
+            padding-bottom: 2rem;
+        }
+        
+        @media print 
+        {
+            body 
+            {
+                filter: grayscale(100%);
+            }
+
+            #printLogo 
+            {
+                display: block;
+            }
+
+            select,
+            input[type="radio"],
+            #printButton,
+            nav,
+
+            .input 
+            {
+                display: none !important;
+            }
+
+            td 
+            {
+                color: black !important;
+                border-color: black !important;
+            }
+        }
+
+
      
     </style>
 </head>
@@ -135,6 +181,7 @@
 
 <header>
     <h1>Graphing</h1>
+    <img src="PixelForge.jpeg" alt="Logo" id="printLogo">
 </header>
 
 <nav>
@@ -356,4 +403,7 @@
     }
 </script>
 </body>
+<footer>
+    <button onclick="window.print()" id="printButton">Print Page</button>
+</footer>
 </html>
