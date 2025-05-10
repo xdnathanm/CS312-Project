@@ -66,12 +66,15 @@
         }
         #tableDiv {
             width: 800px;
+            max-height:200px;
+            min-height:200px;
+            overflow-y: scroll;
         }
         .table1 {
             width: 200px;
             border-collapse: collapse;
             margin: 20px auto;
-            overflow-y: scroll;
+            
             overflow-x: scroll;
         }
         .table1 td {
