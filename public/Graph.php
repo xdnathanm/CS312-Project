@@ -189,11 +189,6 @@
 
 <script>
     document.getElementById("tableForm").addEventListener("submit", table);
-    const colorChoices = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Grey", "Brown", "Black", "Teal"];
-    const colorHexMap = {
-        red: "#FF0000", orange: "#FFA500", yellow: "#FFFF00", green: "#008000", blue: "#0000FF",
-        purple: "#800080", grey: "#808080", brown: "#A52A2A", black: "#000000", teal: "#008080"
-    };
     let selectedColor = null; // default color that will not contain value until user selects a color
 
     function table(event) 
@@ -203,9 +198,29 @@
 
         const rows = parseInt(document.getElementById("rows").value);
         const columns = parseInt(document.getElementById("columns").value);
-        const colorNum = parseInt(document.getElementById("colors").value);
+        let colorNum = parseInt(document.getElementById("colors").value); // let instead of const for validation
         const tableDiv = document.getElementById("tableDiv");
         const tableDiv2 = document.getElementById("tableDiv2");
+
+        //pull colors from localStorage instead of hardcoding
+        const raw = localStorage.getItem('colors');
+        let userColors = [];
+        if(raw) 
+        {
+            userColors = JSON.parse(raw);
+        }
+        if (userColors.length === 0) 
+        {
+            alert("No available colors. Please configure in Color Selection.");
+            return;
+        }
+        //add to number of available colors
+        if(colorNum > userColors.length) 
+        {
+            alert("Color number exceeds available colors. Adjusted.");
+            colorNum = userColors.length;
+        }
+
         const table1 = document.createElement("table");
 
         //removes old table
@@ -221,7 +236,7 @@
         const cellToCoord = new Map();
         const cellColorMap = new Map();
 
-        for (let i = 0; i < colorNum; i++) 
+        for(let i = 0; i < colorNum; i++) 
         {
             const row = document.createElement("tr");
             const left = document.createElement("td");
@@ -235,16 +250,15 @@
             select.name = "colorSelect";
             hexSpan.className = "print-hex";
 
-            for(let j = 0; j < colorChoices.length; j++) 
-            {
+            userColors.forEach(c => {
                 const option = document.createElement("option");
-                option.textContent = colorChoices[j];
-                option.value = colorChoices[j].toLowerCase();
+                option.textContent = c.name;
+                option.value = c.hex;
                 select.append(option);
-            }
+            });
 
             select.selectedIndex = i;
-            hexSpan.textContent = ` (${colorHexMap[select.value]})`;
+            hexSpan.textContent = ` (${select.value})`;
             const initialColor = select.value;
             colorCoords[initialColor] = [];
             coordDisplays[initialColor] = right;
@@ -256,10 +270,12 @@
             select.addEventListener("change", () => {
                 const oldColor = Object.keys(coordDisplays).find(k => coordDisplays[k] === right);
                 const newColor = select.value;
-                hexSpan.textContent = ` (${colorHexMap[newColor]})`;
+                hexSpan.textContent = ` (${newColor})`;
 
-                if (!colorCoords[newColor]) colorCoords[newColor] = [];
-
+                if(!colorCoords[newColor]) 
+                {
+                    colorCoords[newColor] = [];
+                }
                 colorCoords[oldColor].forEach(coord => {
                     const cell = coordToCell[coord];
                     if(cell) 
@@ -298,11 +314,8 @@
 
         tableDiv.append(table1);
 
-        //const tableDiv2 = document.getElementByID("tableDiv2");
         const table2 = document.createElement("table");
         table2.className = "table2";
-        //tableDiv2.innerHTML = "";
-        // table2.style.overflow-y = "auto";
         al = 65; // aschii alphabet character start number(IE A)
         al2 = 65; // for the second alphabet charachter
         eal = 0;   // end of alphabet for the first A
@@ -416,6 +429,7 @@
         }
     }
 </script>
+
 
 <footer>
     <button onclick="window.print()" id="printButton">Print Page</button>

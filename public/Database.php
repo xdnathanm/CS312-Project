@@ -89,7 +89,7 @@
         font-weight: bold;
         margin-top: 1em;
     }
-    
+
     .error {
         color: red;
         font-style: italic;
@@ -213,8 +213,8 @@
 
         if(colors.some((c, i) => i != index && (c.name.toLowerCase() === name.toLowerCase() || c.hex.toLowerCase() === hex.toLowerCase()))) 
         {
-        error.textContent = 'Name or hex already exists.';
-        return;
+            error.textContent = 'Name or hex already exists.';
+            return;
         }
 
         colors[index] = { name, hex };
