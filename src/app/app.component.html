@@ -68,7 +68,8 @@
 <nav>
   @for (item of [
     {title:'About Us', link: 'About.php'},
-    {title:'Graphing', link: 'Graph.php'}
+    {title:'Graphing', link: 'Graph.php'},
+    {title:'Color Selection', link: 'Database.php'}
   ]; track item.title) {
     <a [href]="item.link">
       <span>{{ item.title }}</span>

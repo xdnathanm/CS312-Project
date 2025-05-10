@@ -78,7 +78,7 @@
     <nav>
         <a href="/index.html">Home</a>
         <a href="Graph.php">Graphing</a>
-        
+        <a href="Database.php">Color Selection</a>
     </nav>
     <div class="container">
         <h1>Meet Our Team</h1>
