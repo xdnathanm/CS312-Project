@@ -307,27 +307,27 @@
         eal = 0;   // end of alphabet for the first A
         eal2 = 0; // end of alphabet for the second leter
 
-        for (let i = 0; i <= rows; i++) {
+        for(let i = 0; i <= rows; i++){
             const row = document.createElement("tr");
 
-            for (let j = 0; j <= columns; j++) {
+            for(let j = 0; j <= columns; j++){
                 const column = document.createElement("td");
 
                 // this addes the numbers in the rows
-                if (j == 0 && i != 0) {
+                if(j == 0 && i != 0){
                     const cell_text = document.createTextNode(`${i}`);
                     column.appendChild(cell_text);
                 }
 
                 // this adds the letters in the columns
-                if (i == 0 && j != 0) {
-                    if (eal == 0) {
+                if (i == 0 && j != 0){
+                    if(eal == 0){
                         const cell_text = document.createTextNode(`${String.fromCharCode(al)}`);
                         column.appendChild(cell_text);
                         al++;
                     }
-                    else if (eal == 1) {
-                        if (eal2 == 1) {
+                    else if(eal == 1){
+                        if(eal2 == 1){
                             al++;
                             eal2 = 0;
                         }
@@ -337,13 +337,13 @@
                     }
 
                     // sets the first alphabet aschii num back to 56 and sets the flag that for end of alph to be true.
-                    if (al > 90) {
+                    if(al > 90){
                         eal = 1;
                         al = 65;
                     }
 
                     // sets the second alphabet aschii num back to 65
-                    if (al2 > 90) {
+                    if(al2 > 90){
                         al2 = 65;
                         eal2 = 1;
                     }
